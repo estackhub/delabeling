@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include delabeling *.css
+recursive-include delabeling *.csv
+recursive-include delabeling *.html
+recursive-include delabeling *.ico
+recursive-include delabeling *.js
+recursive-include delabeling *.json
+recursive-include delabeling *.md
+recursive-include delabeling *.png
+recursive-include delabeling *.py
+recursive-include delabeling *.svg
+recursive-include delabeling *.txt
+recursive-exclude delabeling *.pyc
