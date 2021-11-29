@@ -13,11 +13,11 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/delabeling/css/delabeling.css"
-# app_include_js = "/assets/delabeling/js/delabeling.js"
+app_include_css = "/assets/delabeling/css/delabeling_app.css"
+app_include_js = "/assets/delabeling/js/delabeling.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/delabeling/css/delabeling.css"
+web_include_css = "/assets/delabeling/css/delabeling_web.css"
 # web_include_js = "/assets/delabeling/js/delabeling.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -46,6 +46,8 @@ app_license = "MIT"
 # role_home_page = {
 #	"Role": "home_page"
 # }
+
+after_migrate = ['delabeling.events.api.whitelabel_patch']
 
 # Generators
 # ----------
@@ -119,7 +121,8 @@ app_license = "MIT"
 # }
 
 # Testing
-# -------
+# -------  
+boot_session = "delabeling.events.api.boot_session"
 
 # before_tests = "delabeling.install.before_tests"
 
@@ -172,4 +175,7 @@ user_data_fields = [
 # auth_hooks = [
 # 	"delabeling.auth.validate"
 # ]
+override_whitelisted_methods = {
+	"frappe.utils.change_log.show_update_popup": "delabeling.events.api.ignore_update_popup"
+}
 
