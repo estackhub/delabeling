@@ -1,9 +1,6 @@
 $(window).on('load', function() {
     frappe.after_ajax(function () {
-        if (frappe.boot.delabeling_setting.show_help_menu) {
-            
-            $('.dropdown-help').attr('style', 'display: block !important');
-        }
+        
         if (frappe.boot.delabeling_setting.logo_width) {
             $('.app-logo').css('width',frappe.boot.delabeling_setting.logo_width+'px');
         }
